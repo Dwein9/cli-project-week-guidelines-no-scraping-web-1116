@@ -1,14 +1,14 @@
 class ToiletLocation
 
-  attr_reader :location, :handicap_accessible #:borough, , :name, :open_year_round
+  attr_reader :location, :handicap_accessible, :borough
 
   ALL = []
 
-  def initialize(location, handicap_accessible)
+  def initialize(location, handicap_accessible, borough)
     @location = location
-    # @borough = borough
+    @borough = borough
     @handicap_accessible = handicap_accessible
-    # @name = name
+    # name = name
     # @open_year_round = open_year_round
     ALL << self
   end
@@ -16,13 +16,5 @@ class ToiletLocation
   def self.all
     ALL
   end
-
-  # def handicap_accessible?
-  #   if @handicap_accessible
-  #     @handicap_accessible
-  #   else
-  #     "No information available."
-  #   end
-  # end
 
 end

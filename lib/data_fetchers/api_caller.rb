@@ -15,8 +15,10 @@ class ToiletData
   def fetch_toilets(borough)
     toilets_array = []
     @toilet_data.each do |toilet|
-      if toilet["borough"] == borough.capitalize
-        ToiletLocation.new(toilet["location"], toilet["handicap_accessible"])
+      if toilet["borough"].downcase == borough.downcase
+        if toilet["open_year_round"] == "Yes"
+        ToiletLocation.new(toilet["location"], toilet["handicap_accessible"], toilet["borough"])
+        end
       end
     end
   end
